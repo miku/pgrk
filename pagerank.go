@@ -126,6 +126,7 @@ func main() {
         defined[head] = nodelist
     }
 
+    log.Printf("%d nodes\n", maximum)
     nodes := make([]GraphNode, maximum+1)
 
     for i, _ := range nodes {
