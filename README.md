@@ -10,7 +10,7 @@ happen elsewhere).
 Example
 -------
 
-![Shiny graph][http://i.imgur.com/0ZQYLFl.png]
+![Shiny graph](http://i.imgur.com/0ZQYLFl.png)
 
 Example input file:
 
