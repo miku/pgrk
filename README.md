@@ -7,7 +7,8 @@ The input file represents a directed graph as adjacency list, where each node
 must be identified by an integer (translation from and to your domain must
 happen elsewhere).
 
-Example graph: 
+Example
+-------
 
 ![Shiny graph][http://i.imgur.com/0ZQYLFl.png]
 
@@ -56,3 +57,9 @@ Options:
     File format: TSV (NODE OUTBOUND [OUTBOUND, ...])
       -c=0.0001: convergence criteron
       -w=0.85: walk probability
+
+
+Benchmark
+---------
+
+Computing the pagerank of an 10,004,750 node sparse graph takes about 30s.
