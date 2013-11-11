@@ -7,6 +7,10 @@ The input file represents a directed graph as adjacency list, where each node
 must be identified by an integer (translation from and to your domain must
 happen elsewhere).
 
+Example graph: 
+
+![Shiny graph][http://i.imgur.com/0ZQYLFl.png]
+
 Example input file:
 
     $ cat example.in 
