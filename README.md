@@ -9,6 +9,7 @@ happen elsewhere).
 
 Example input file:
 
+    $ cat example.in
     1   2
     2   3   4   5
     4   2
