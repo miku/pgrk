@@ -24,7 +24,7 @@ Example input file:
 
 Usage:
 
-    $ pagerank example.in |sort -k2,2 -nr
+    $ pagerank example.in | sort -k2,2 -nr
     2013/11/11 12:54:27 Ranking with beta='0.850000', epsilon='0.000100'
     2013/11/11 12:54:27 Pagerank iteration #1 delta=0.661111
     2013/11/11 12:54:27 Pagerank iteration #2 delta=0.361250
