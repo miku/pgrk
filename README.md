@@ -63,3 +63,8 @@ Benchmark
 ---------
 
 Computing the pagerank of an 10,004,750 node sparse graph takes about 30s.
+
+Credits
+-------
+
+* [Thomas Dimson](https://github.com/cosbynator) for [WikiRank](https://github.com/cosbynator/WikiRank)
