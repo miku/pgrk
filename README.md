@@ -71,7 +71,8 @@ Benchmark
 Utils
 -----
 
-Generate and visualize random directed graphs:
+Generate and visualize random directed graphs, with `gengraph.py`
+and `visgraph.py`:
 
     $ python gengraph.py -n 30 -p 0.75 > test.in
     $ cat test.in | python visgraph.py | dot -Tpng -o test.png | open test.png
