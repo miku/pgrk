@@ -1,7 +1,7 @@
 README
 ======
 
-Simple command line PageRank calculator.
+Simple command line [PageRank](http://infolab.stanford.edu/~backrub/google.html) calculator.
 
 The input file represents a directed graph as adjacency list, where each node
 must be identified by an integer (translation from and to your domain must
