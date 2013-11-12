@@ -27,9 +27,8 @@ def to_dot():
     print('digraph %s {' % random_string(length=5))
     for line in fileinput.input():
         nodes = line.strip().split()
-        head, rest = nodes[0], nodes[1:]
-        for node in rest:
-            print('    %s -> %s;' % (head, node))
+        for node in nodes[1:]:
+            print('    %s -> %s;' % (nodes[0], node))
     print('}')
 
 if __name__ == '__main__':
