@@ -8,7 +8,7 @@
 //    4   2
 //    5   1
 //
-//    $ pagerank example.in | sort -k2,2 -nr 2> /dev/null
+//    $ pagerank example.in 2> /dev/null | sort -k2,2 -nr
 //    2   0.33477170103317816
 //    1   0.20154082325712538
 //    5   0.13963495553328562
@@ -87,6 +87,8 @@ func pageRankGraph(g Graph, walkProbability float64, convergenceCriteron float64
 }
 
 func main() {
+
+    log.SetOutput(os.Stderr)
 
     walkProbability := flag.Float64("w", 0.85, "walk probability")
     convergenceCriteron := flag.Float64("c", 0.0001, "convergence criteron")
