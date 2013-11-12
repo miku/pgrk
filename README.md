@@ -62,7 +62,10 @@ Options:
 Benchmark
 ---------
 
-Computing the pagerank of an 10,004,750 node sparse graph takes about 30s.
+* Computing the pagerank of an 10,004,750 node sparse graph takes about 30s.
+* `{"p": 0.8, "nodes": 30000000, "edges": 46735510}`: 1m55.010s
+* `{"p": 0.8, "nodes": 50000000, "edges": 77879276}`: 3m6.173s
+* `{"p": 0.99, "nodes": 50000000, "edges": 268891019}`: 4m10.350s
 
 
 Utils
