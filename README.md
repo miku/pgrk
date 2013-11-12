@@ -64,6 +64,25 @@ Benchmark
 
 Computing the pagerank of an 10,004,750 node sparse graph takes about 30s.
 
+
+Utils
+-----
+
+Generate and visualize random directed graphs:
+
+    $ python gengraph.py -n 30 -p 0.75 > test.in
+    $ cat test.in | python visgraph.py | dot -Tpng -o test.png | open test.png
+    $ pagerank test.in 2> /dev/null | sort -nrk2,2 | head -5
+    18  0.1311205672492894
+    3   0.07377231679742774
+    28  0.06750106342991567
+    8   0.06681004168406582
+    27  0.06486716855707648
+
+
+![Another Shiny graph](http://i.imgur.com/hzzKtzq.png)
+
+
 Credits
 -------
 
