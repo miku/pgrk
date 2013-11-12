@@ -1,3 +1,20 @@
+// Command line pagerank
+// ---------------------
+//
+//    $ cat example.in
+//    0   1
+//    1   2
+//    2   3   4   5
+//    4   2
+//    5   1
+//
+//    $ pagerank example.in | sort -k2,2 -nr 2> /dev/null
+//    2   0.33477170103317816
+//    1   0.20154082325712538
+//    5   0.13963495553328562
+//    4   0.13963495553328562
+//    3   0.13963495553328562
+//    0   0.0447826091098397
 package main
 
 import (
@@ -19,8 +36,8 @@ type GraphNode struct {
     OutboundNeighbors []int
 }
 
+// Taken from https://github.com/cosbynator/WikiRank
 // Written by Thomas Dimson (tdimson@cs.stanford.edu)
-// Used with permission
 func pageRankGraph(g Graph, walkProbability float64, convergenceCriteron float64) []float64 {
     beta, epsilon := walkProbability, convergenceCriteron
     log.Printf("Ranking with beta='%f', epsilon='%f'", beta, epsilon)
