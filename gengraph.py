@@ -6,9 +6,11 @@ Generate random directed graphs for testing `pagerank`.
 
 With p = 0.9999999999999999, you'll likely get a complete digraph.
 """
-
+from __future__ import print_function
 import argparse
+import json
 import random
+import sys
 
 
 def main():
@@ -22,17 +24,25 @@ def main():
     if args.p >= 1.0:
         raise ValueError('p only defined on [0, 1)')
 
-    for origin in range(args.n):
+    n = args.n
+    c = args.c
+    rr = random.random
+    ri = random.randint
+    edges = 0
+
+    for origin in xrange(n):
         destinations = set()
         p = args.p
-        while random.random() < p:
-            destinations.add(random.randint(0, args.n))
+        while rr() < p:
+            destinations.add(ri(0, n))
+            edges += 1
             p = p * p
-        if args.c:
-            line = [origin] + list(destinations)
+        if c:
+            parts = [origin] + list(destinations)
         else:
-            line = [origin] + list(destinations - set([origin]))
-        print('\t'.join(map(str, line)))
+            parts = [origin] + list(destinations - set([origin]))
+        print('\t'.join(map(str, parts)), file=sys.stdout)
+    print(json.dumps(dict(nodes=n, edges=edges, p=args.p)), file=sys.stderr)
 
 
 if __name__ == '__main__':
