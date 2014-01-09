@@ -1,7 +1,7 @@
 sources = $(wildcard *.go)
 targets = $(basename $(sources))
 
-all: $(targets) example.png
+all: $(targets)
 
 %: %.go
 	gofmt -w -tabs=false -tabwidth=4 $<
@@ -11,5 +11,5 @@ example.png:
 	dot -Tpng example.dot -oexample.png
 
 clean:
-	rm $(targets)
-	rm example.png
+	rm -f $(targets)
+	rm -f example.png
