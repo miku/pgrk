@@ -112,14 +112,13 @@ func main() {
     if fileName == "-" {
       in = os.Stdin
     } else {
-      handle, err := os.Open(fileName)
-      in = handle
+      in, err := os.Open(fileName)
       if err != nil {
           fmt.Printf("%s\n", err)
           os.Exit(1)
       }
       defer func() {
-          if err := handle.Close(); err != nil {
+          if err := in.Close(); err != nil {
               panic(err)
           }
       }()
