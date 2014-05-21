@@ -110,19 +110,21 @@ func main() {
 
     var in *os.File
     if fileName == "-" {
-      in = os.Stdin
+        in = os.Stdin
     } else {
-      in, err := os.Open(fileName)
-      if err != nil {
-          fmt.Printf("%s\n", err)
-          os.Exit(1)
-      }
-      defer func() {
-          if err := in.Close(); err != nil {
-              panic(err)
-          }
-      }()
+        var err error
+        in, err = os.Open(fileName)
+        if err != nil {
+            fmt.Printf("%s\n", err)
+            os.Exit(1)
+        }
+        defer func() {
+            if err = in.Close(); err != nil {
+                panic(err)
+            }
+        }()
     }
+
     scanner := bufio.NewScanner(in)
     if err := scanner.Err(); err != nil {
         log.Fatal(err)
