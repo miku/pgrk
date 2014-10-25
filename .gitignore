@@ -24,3 +24,7 @@ _testmain.go
 pagerank
 test-*
 example.png
+pgrk
+pgrk-dot
+pgrk-gen
+
