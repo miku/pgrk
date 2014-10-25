@@ -7,7 +7,10 @@ The input file represents a directed graph as adjacency list, where each node
 must be identified by an integer (translation from and to your domain must
 happen elsewhere).
 
-[![Gobuild download](http://gobuild.io/badge/github.com/miku/gopagerank/download.png)](http://gobuild.io/download/github.com/miku/gopagerank)
+Installation
+------------
+
+    $ go get github.com/miku/pgrk/cmd/{pgrk,pgrk-gen,pgrk-dot}
 
 Example
 -------
