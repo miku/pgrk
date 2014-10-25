@@ -76,18 +76,17 @@ Benchmark
 Utils
 -----
 
-Generate and visualize random directed graphs, with `gengraph.py`
-and `visgraph.py`:
+Generate and visualize random directed graphs, with `pgrk-gen`
+and `pgrk-dot`:
 
-    $ python gengraph.py -n 30 -p 0.75 > test.in
-    $ cat test.in | python visgraph.py | dot -Tpng -o test.png | open test.png
-    $ pagerank test.in 2> /dev/null | sort -nrk2,2 | head -5
-    18  0.1311205672492894
-    3   0.07377231679742774
-    28  0.06750106342991567
-    8   0.06681004168406582
-    27  0.06486716855707648
-
+    $ pgrk-gen -n 30 -p 0.75 > test.in
+    $ cat test.in | pgrk-dot | dot -Tpdf -o test.pdf && open test.pdf
+    $ pgrk test.in 2> /dev/null | sort -nrk2,2 | head -5
+    20  0.10566870915778451
+    18  0.10238092345567337
+    6   0.10012509291487659
+    28  0.06610747553255986
+    16  0.06485242652853762
 
 ![Another Shiny graph](http://i.imgur.com/hzzKtzq.png)
 
