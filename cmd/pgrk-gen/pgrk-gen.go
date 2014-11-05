@@ -5,10 +5,12 @@ import (
 	"fmt"
 	"log"
 	"math/rand"
+	"os"
 	"strconv"
 	"strings"
 	"time"
 
+	"github.com/miku/pgrk"
 	"gopkg.in/fatih/set.v0"
 )
 
@@ -16,8 +18,14 @@ func main() {
 	n := flag.Int("n", 10, "number of vertices")
 	p := flag.Float64("p", 0.67, "density measure")
 	c := flag.Bool("c", false, "allow zero hop cycles")
+	version := flag.Bool("v", false, "prints current version and exits")
 
 	flag.Parse()
+
+	if *version {
+		fmt.Println(pgrk.Version)
+		os.Exit(0)
+	}
 
 	if *p >= 1.0 {
 		log.Fatal("p must be < 1")

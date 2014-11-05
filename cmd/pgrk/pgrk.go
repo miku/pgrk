@@ -23,8 +23,11 @@ import (
 	"log"
 	"math"
 	"os"
+	"runtime/pprof"
 	"strconv"
 	"strings"
+
+	"github.com/miku/pgrk"
 )
 
 type Graph struct {
@@ -90,6 +93,8 @@ func main() {
 
 	walkProbability := flag.Float64("w", 0.85, "walk probability")
 	convergenceCriteron := flag.Float64("c", 0.0001, "convergence criteron")
+	cpuprofile := flag.String("cpuprofile", "", "write cpu profile to file")
+	version := flag.Bool("v", false, "prints current version and exits")
 
 	var PrintUsage = func() {
 		fmt.Fprintf(os.Stderr, "Usage: %s [OPTIONS] FILE\n", os.Args[0])
@@ -98,6 +103,20 @@ func main() {
 	}
 
 	flag.Parse()
+
+	if *cpuprofile != "" {
+		f, err := os.Create(*cpuprofile)
+		if err != nil {
+			log.Fatalln(err)
+		}
+		pprof.StartCPUProfile(f)
+		defer pprof.StopCPUProfile()
+	}
+
+	if *version {
+		fmt.Println(pgrk.Version)
+		os.Exit(0)
+	}
 
 	if flag.NArg() < 1 {
 		PrintUsage()
