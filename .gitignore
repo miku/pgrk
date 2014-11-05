@@ -24,7 +24,10 @@ _testmain.go
 pagerank
 test-*
 example.png
-./pgrk
-./pgrk-dot
-./pgrk-gen
+/pgrk
+/pgrk-dot
+/pgrk-gen
 
+pgrk*.rpm
+debian/*deb
+debian/pgrk/usr
