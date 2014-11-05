@@ -1,6 +1,6 @@
 Summary:    Various MARC command line utils in Go
 Name:       pgrk
-Version:    1.0.0
+Version:    1.0.1
 Release:    0
 License:    GPLv3
 BuildArch:  x86_64
