@@ -72,4 +72,4 @@ and `pgrk-dot`:
 Credits
 -------
 
-* [Thomas Dimson](https://github.com/cosbynator) for [WikiRank](https://github.com/cosbynator/WikiRank)
+* [Thomas Dimson](https://web.archive.org/web/20150408134637/https://github.com/cosbynator) for [WikiRank](https://github.com/cosbynator/WikiRank)
