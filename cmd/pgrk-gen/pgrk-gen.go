@@ -35,7 +35,7 @@ func main() {
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 
 	for i := 0; i < *n; i++ {
-		dsts := set.New()
+		dsts := set.New(set.NonThreadSafe)
 		var parts []string
 		pp := *p
 		for rand.Float64() < pp {
